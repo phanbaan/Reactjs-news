@@ -5,7 +5,7 @@ export default class Testimonial extends Component {
     return (
       <div className="testimonials__item">
         <div className="testimonials__img">
-          <img src="./assets/images/user1.jpg" alt="" />
+          <img src={this.props.url} alt="" />
         </div>
         <div className="testimonial__content">
           <p className="text">
@@ -13,7 +13,7 @@ export default class Testimonial extends Component {
             cupiditate ab error praesentium dignissimos veritatis reiciendis
             voluptates aperiam eveniet vero.
           </p>
-          <h3 className="testimonials__title">christine berkley</h3>
+          <h3 className="testimonials__title">{this.props.name}</h3>
           <ul className="testimonials__star">
             <li className="testimonials__star-icon">
               <img src="./assets/images/star.png" alt="" />

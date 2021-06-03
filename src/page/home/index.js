@@ -1,16 +1,41 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Course from "../../components/Service";
+import Service from "../../components/Service";
 import Campus from "../../components/Campus";
 import Facilities from "../../components/Facilities";
 import Testimonial from "../../components/Testimonial";
 import CallUs from "../../components/CallUs";
+
+import data from "../../data/data.json";
+
 export default class index extends Component {
+  renderService = () => {
+    return data.service.map((item, index) => {
+      return <Service key={index} name={item.name} short={item.short} />;
+    });
+  };
+  renderCampus = () => {
+    return data.campus.map((item, index) => {
+      return <Campus key={index} name={item.name} url={item.url} />;
+    });
+  };
+  renderFacilities = () => {
+    return data.facilities.map((item, index) => {
+      return (
+        <Facilities
+          key={index}
+          title={item.title}
+          url={item.url}
+          description={item.description}
+        />
+      );
+    });
+  };
   render() {
     return (
       <>
-        <Header />
+        <Header className="home" />
         {/* --------courses------- */}
         <div className="courses">
           <div className="container">
@@ -20,11 +45,7 @@ export default class index extends Component {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit
               </p>
             </div>
-            <div className="courses-content">
-              <Course />
-              <Course />
-              <Course />
-            </div>
+            <div className="courses-content">{this.renderService()}</div>
           </div>
         </div>
         {/* ---------campus----------- */}
@@ -36,11 +57,7 @@ export default class index extends Component {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit
               </p>
             </div>
-            <div className="campus-content">
-              <Campus />
-              <Campus />
-              <Campus />
-            </div>
+            <div className="campus-content">{this.renderCampus()}</div>
           </div>
         </div>
         {/*  -------------facilities------- */}
@@ -52,11 +69,7 @@ export default class index extends Component {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </p>
             </div>
-            <div className="facilities-content">
-              <Facilities />
-              <Facilities />
-              <Facilities />
-            </div>
+            <div className="facilities-content">{this.renderFacilities()}</div>
           </div>
         </div>
         {/* -----------testimonials-------------- */}
@@ -69,8 +82,11 @@ export default class index extends Component {
               </p>
             </div>
             <div className="testimonials-content">
-              <Testimonial />
-              <Testimonial />
+              <Testimonial
+                url="./assets/images/user1.jpg"
+                name="christine berkley"
+              />
+              <Testimonial url="./assets/images/user2.jpg" name="Phan Ba An" />
             </div>
           </div>
         </div>

@@ -143,6 +143,7 @@ nav {
   text-align: center;
 }
 .heading__secondary {
+  text-transform: capitalize;
   font-size: 3.6rem;
   font-weight: 600;
 }

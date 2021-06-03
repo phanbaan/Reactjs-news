@@ -1,13 +1,13 @@
 import "./App.css";
 import React, { Component } from "react";
-import Home from "./page/home/index";
-
+import Routers from "./routers/Routers";
+import { BrowserRouter as Router } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <>
-        <Home />
-      </>
+      <Router>
+        <Routers />
+      </Router>
     );
   }
 }

@@ -4,12 +4,8 @@ export default class Service extends Component {
   render() {
     return (
       <div className="courses__item">
-        <h3 className="courses__title">Intermediate</h3>
-        <p className="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-          odit expedita totam dicta ad impedit tempore fugit fugiat ducimus
-          dolor!
-        </p>
+        <h3 className="courses__title">{this.props.name}</h3>
+        <p className="text">{this.props.short}</p>
       </div>
     );
   }

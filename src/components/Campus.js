@@ -5,10 +5,10 @@ export default class Campus extends Component {
     return (
       <div className="campus__item">
         <div className="campus__img">
-          <img src="./assets/images/london.png" alt="" />
+          <img src={this.props.url} alt="" />
         </div>
         <div className="campus__title">
-          <h3>London</h3>
+          <h3>{this.props.name}</h3>
         </div>
       </div>
     );

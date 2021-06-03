@@ -5,12 +5,13 @@ export default class Facilities extends Component {
     return (
       <a href="#" className="facilities__item">
         <div className="facilities__img">
-          <img src="./assets/images/library.png" alt="" />
+          <img src={this.props.url} alt="" />
         </div>
-        <h3 className="facilities__title">world class library</h3>
+        <h3 className="facilities__title">{this.props.title}</h3>
         <p className="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ut quae
-          at quia porro voluptate?
+          {this.props.description.length > 100
+            ? this.props.description.slice(0, 100) + "..."
+            : this.props.description}
         </p>
       </a>
     );
