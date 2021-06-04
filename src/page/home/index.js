@@ -21,18 +21,22 @@ export default class index extends Component {
     });
   };
   renderFacilities = () => {
-    return data.facilities.map((item, index) => {
-      return (
-        <Facilities
-          key={index}
-          title={item.title}
-          url={item.url}
-          description={item.description}
-        />
-      );
-    });
+    return data.facilities
+      .filter((item) => item.id < 4)
+      .map((item, index) => {
+        return (
+          <Facilities
+            key={index}
+            title={item.title}
+            url={item.url}
+            description={item.description}
+            nameId={item.id}
+          />
+        );
+      });
   };
   render() {
+    console.log("render dc goi");
     return (
       <>
         <Header className="home" />

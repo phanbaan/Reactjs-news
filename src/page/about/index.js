@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-
+import { Link } from "react-router-dom";
 export default class index extends Component {
   render() {
     return (
@@ -18,9 +18,9 @@ export default class index extends Component {
                   quidem voluptas beatae atque inventore, ex tempora aspernatur
                   sit.
                 </p>
-                <a href="#" class="btn-text btn-text--secondary">
+                <Link to="/" class="btn-text btn-text--secondary">
                   Explore now
-                </a>
+                </Link>
               </div>
               <div class="about-content__item">
                 <img

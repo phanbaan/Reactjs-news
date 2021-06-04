@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./Navigation";
-
+import { Link } from "react-router-dom";
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
   renderTitle = () => {
     if (this.props.className === "home") {
       return (
@@ -16,10 +13,9 @@ class Header extends Component {
             <br />
             Javascript and you are good to go
           </p>
-          <a href="#" className="btn-text">
+          <Link to="/" className="btn-text">
             Visit Us to know more
-          </a>
-          ;
+          </Link>
         </div>
       );
     } else {

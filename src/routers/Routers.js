@@ -5,6 +5,7 @@ import About from "../page/about/index";
 import Course from "../page/course/index";
 import Blog from "../page/blog/index";
 import Contact from "../page/contact/index";
+import FacilitiesDetail from "../page/facilities-detail/FacilitiesDetail";
 
 export default class Routers extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class Routers extends Component {
         <Route path="/contact">
           <Contact />
         </Route>
+        <Route path="/:slug.:id.html" component={FacilitiesDetail}></Route>
       </Switch>
     );
   }

@@ -4,6 +4,21 @@ import Header from "../../components/Header";
 import Map from "../../components/Map";
 
 export default class index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  isOnchange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value,
+    });
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state.fname);
+  };
   render() {
     return (
       <>
@@ -30,29 +45,41 @@ export default class index extends Component {
               </div>
               <div className="contact-content__item">
                 <div className="contact-form">
-                  <form action className="form">
+                  <form
+                    action
+                    className="form"
+                    onSubmit={(event) => this.handleSubmit(event)}
+                  >
                     <input
                       type="text"
                       className="form__input"
                       placeholder="Enter your name"
                       required
+                      name="fname"
+                      onChange={(event) => this.isOnchange(event)}
                     />
                     <input
                       type="text"
                       className="form__input"
                       placeholder="Enter your email"
                       required
+                      name="femail"
+                      onChange={(event) => this.isOnchange(event)}
                     />
                     <input
                       type="text"
                       className="form__input"
                       placeholder="Enter your subject"
                       required
+                      name="fsub"
+                      onChange={(event) => this.isOnchange(event)}
                     />
                     <textarea
                       className="form__input"
                       rows={10}
-                      defaultValue={""}
+                      placeholder="enter messager"
+                      name="fmes"
+                      onChange={(event) => this.isOnchange(event)}
                     />
                     <button className="btn-text btn-text--secondary">
                       Send message
